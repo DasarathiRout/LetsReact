@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './main.css';
 import Person from './Person/Person'
+import UserInPut from './User/UserInPut';
+import UserOutPut from './User/UserOutPut';
 
 class Main extends Component {
 
@@ -12,7 +14,8 @@ class Main extends Component {
       { name: 'USR2', age: 32 },
       { name: 'USR3', age: 33 },
       { name: 'USR4', age: 34 }
-    ]
+    ],
+    userName: 'Super Max'
   }
 
   switchNameHandler = () => {
@@ -41,10 +44,10 @@ class Main extends Component {
     }
   }
 
-  nameChangedHandler = (event) =>{
+  nameChangedHandler = (event) => {
     this.setState({
       person: [
-        { name: event.target.value , age: 21 },
+        { name: event.target.value, age: 21 },
         { name: 'ADMIN-2', age: 22 },
         { name: 'ADMIN-3', age: 23 },
         { name: 'ADMIN-4', age: 24 }
@@ -52,9 +55,13 @@ class Main extends Component {
     });
   }
 
+  userNameChangedHandler = (event) => {
+    this.setState({ userName: event.target.value });
+  }
+
   render() {
 
-    const cssStyle= {
+    const cssStyle = {
       border: '4px solid blue',
       padding: '8px',
     }
@@ -64,12 +71,19 @@ class Main extends Component {
           <div>
             <div>Lets React To Main.JS !!!</div>
 
-            <button onClick={this.switchNameHandler} style= {cssStyle}>Switch Name</button>
+            <button onClick={this.switchNameHandler} style={cssStyle}>Switch Name</button>
 
-            <Person name={this.state.person[0].name} age={this.state.person[0].age} changed= {this.nameChangedHandler}>Skills: Java, Spring, SQL</Person>
+            <Person name={this.state.person[0].name} age={this.state.person[0].age} changed={this.nameChangedHandler}>Skills: Java, Spring, SQL</Person>
             <Person name={this.state.person[1].name} age={this.state.person[1].age}>Skills: Python, Linux</Person>
             <Person name={this.state.person[2].name} age={this.state.person[2].age}>Skils: JavaScript, Node, HTML</Person>
             <Person name={this.state.person[3].name} age={this.state.person[3].age} />
+
+            <hr />
+            <UserInPut
+              changed={this.userNameChangedHandler}
+              currentName={this.state.username} />
+            <UserOutPut userName={this.state.userName} />
+            <UserOutPut userName="Dasarathi Rout." />
 
           </div>
         </header>
