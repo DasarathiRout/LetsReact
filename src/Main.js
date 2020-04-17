@@ -53,13 +53,18 @@ class Main extends Component {
   }
 
   render() {
+
+    const cssStyle= {
+      border: '4px solid blue',
+      padding: '8px',
+    }
     return (
       <div className="Main">
         <header className="main-header">
           <div>
             <div>Lets React To Main.JS !!!</div>
 
-            <button onClick={this.switchNameHandler}>Switch Name</button>
+            <button onClick={this.switchNameHandler} style= {cssStyle}>Switch Name</button>
 
             <Person name={this.state.person[0].name} age={this.state.person[0].age} changed= {this.nameChangedHandler}>Skills: Java, Spring, SQL</Person>
             <Person name={this.state.person[1].name} age={this.state.person[1].age}>Skills: Python, Linux</Person>
