@@ -1,0 +1,11 @@
+.error-bounds{
+    text-align: center;
+    color:maroon;
+    font-size: x-large;
+}
+
+.ok-bounds{
+    text-align: center;
+    color: green;
+    font-size: x-large;
+}
