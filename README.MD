@@ -9,5 +9,5 @@ http://localhost:3000
 
 ### `npm run eject`
 
-### `npm run build` fails to minify
+### `npm run build`
 
