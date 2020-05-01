@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Main from './Main';
+import Main from './RContainers/Main';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Main />
+    <Main applicationTitle= 'Product Catalog Manager' />
   </React.StrictMode>,
   document.getElementById('root')
 );
